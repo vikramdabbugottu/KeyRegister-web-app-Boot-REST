@@ -56,13 +56,13 @@ public class KeysController {
 		return keyservice.addkeys(keysmodel);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/keys")
+	@RequestMapping(method=RequestMethod.PUT, value="/keys/{id}")
 	public KeysModel updatekeys(@RequestBody KeysModel keysmodel, @PathVariable int id)
 	{
 		return keyservice.updatekeys(id, keysmodel);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/keys")
+	@RequestMapping(method=RequestMethod.DELETE, value="/keys/{keynumber}")
 	public KeysModel deletekey(@PathVariable String keynumber)
 	{
 		return keyservice.deletekey(keynumber);
